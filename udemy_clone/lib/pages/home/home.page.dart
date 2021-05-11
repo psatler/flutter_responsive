@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_clone/breakpoints.dart';
 import 'package:udemy_clone/pages/home/components/app_bar/mobile_app_bar.dart';
 import 'package:udemy_clone/pages/home/components/app_bar/web_app_bar.dart';
 
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
         print(
             "biggest: ${constraints.biggest}  --- smallest: ${constraints.smallest}");
         return Scaffold(
-          appBar: constraints.maxWidth < 800
+          appBar: constraints.maxWidth < mobileBreakpoint
               ? PreferredSize(
                   child: MobileAppBar(),
                   preferredSize: Size(
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
                     72,
                   ),
                 ),
-          drawer: constraints.maxWidth < 800 ? Drawer() : null,
+          drawer: constraints.maxWidth < mobileBreakpoint ? Drawer() : null,
         );
       },
     );
