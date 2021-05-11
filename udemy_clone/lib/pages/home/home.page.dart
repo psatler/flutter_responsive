@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
                     72,
                   ),
                 ),
-          drawer: Drawer(),
+          drawer: constraints.maxWidth < 800 ? Drawer() : null,
         );
       },
     );
