@@ -27,6 +27,15 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
           drawer: constraints.maxWidth < mobileBreakpoint ? Drawer() : null,
+          body: Align(
+            alignment: Alignment.topCenter,
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                maxWidth: 1400,
+              ),
+              child: ListView(),
+            ),
+          ),
         );
       },
     );
