@@ -3,6 +3,8 @@ import 'package:udemy_clone/breakpoints.dart';
 import 'package:udemy_clone/pages/home/components/app_bar/mobile_app_bar.dart';
 import 'package:udemy_clone/pages/home/components/app_bar/web_app_bar.dart';
 
+import 'components/sections/top_section.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,11 @@ class HomePage extends StatelessWidget {
               constraints: BoxConstraints(
                 maxWidth: 1400,
               ),
-              child: ListView(),
+              child: ListView(
+                children: [
+                  TopSection(),
+                ],
+              ),
             ),
           ),
         );
