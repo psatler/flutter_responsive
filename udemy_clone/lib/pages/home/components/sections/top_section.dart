@@ -18,15 +18,12 @@ class TopSection extends StatelessWidget {
               children: [
                 AspectRatio(
                   aspectRatio: 3.4,
-                  child: Image.network(
-                    'https://images.pexels.com/photos/892757/pexels-photo-892757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                    fit: BoxFit.cover,
-                  ),
+                  child: buildImage(),
                 ),
                 Positioned(
                   left: 50,
                   top: 50,
-                  child: BuildTopSectionCardWidget(
+                  child: buildTopSectionCard(
                     width: 450,
                     headingFontSize: 40,
                     subHeadingFontSize: 18,
@@ -37,6 +34,7 @@ class TopSection extends StatelessWidget {
           );
         }
 
+        // tablets
         if (maxWidth >= mobileBreakpoint) {
           return SizedBox(
             height: 320,
@@ -45,15 +43,12 @@ class TopSection extends StatelessWidget {
                 SizedBox(
                   height: 250,
                   width: double.infinity,
-                  child: Image.network(
-                    'https://images.pexels.com/photos/892757/pexels-photo-892757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                    fit: BoxFit.cover,
-                  ),
+                  child: buildImage(),
                 ),
                 Positioned(
                   left: 20,
                   top: 30,
-                  child: BuildTopSectionCardWidget(
+                  child: buildTopSectionCard(
                     width: 350,
                     headingFontSize: 35,
                     subHeadingFontSize: 15,
@@ -64,52 +59,82 @@ class TopSection extends StatelessWidget {
           );
         }
 
-        return Container();
+        return Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 3.4,
+              child: buildImage(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  buildCardContent(
+                    headingFontSize: 35,
+                    subHeadingFontSize: 15,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
       },
     );
   }
-}
 
-class BuildTopSectionCardWidget extends StatelessWidget {
-  final double width;
-  final double headingFontSize;
-  final double subHeadingFontSize;
+  Image buildImage() {
+    return Image.network(
+      'https://images.pexels.com/photos/892757/pexels-photo-892757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      fit: BoxFit.cover,
+    );
+  }
 
-  const BuildTopSectionCardWidget({
-    Key? key,
-    required this.width,
-    required this.headingFontSize,
-    required this.subHeadingFontSize,
-  }) : super(key: key);
+  Column buildCardContent({
+    required double headingFontSize,
+    required double subHeadingFontSize,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+  }) {
+    return Column(
+      crossAxisAlignment: crossAxisAlignment,
+      children: [
+        Text(
+          'Learn Flutter Learn Flutter',
+          style: TextStyle(
+              fontSize: headingFontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          'Come learn Flutter! Come learn Flutter! Come learn Flutter! Come learn Flutter!',
+          style: TextStyle(
+              fontSize: subHeadingFontSize,
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
+        ),
+        const SizedBox(height: 16),
+        CustomSearchField(),
+      ],
+    );
+  }
 
-  @override
-  Widget build(BuildContext context) {
+  Card buildTopSectionCard({
+    required double width,
+    required double headingFontSize,
+    required double subHeadingFontSize,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+  }) {
     return Card(
       color: Colors.black,
       elevation: 8,
       child: Container(
         padding: const EdgeInsets.all(22),
         width: width,
-        child: Column(
-          children: [
-            Text(
-              'Learn Flutter Learn Flutter',
-              style: TextStyle(
-                  fontSize: headingFontSize,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Come learn Flutter! Come learn Flutter! Come learn Flutter! Come learn Flutter!',
-              style: TextStyle(
-                  fontSize: subHeadingFontSize,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
-            ),
-            const SizedBox(height: 16),
-            CustomSearchField(),
-          ],
+        child: buildCardContent(
+          headingFontSize: headingFontSize,
+          subHeadingFontSize: subHeadingFontSize,
+          crossAxisAlignment: crossAxisAlignment,
         ),
       ),
     );

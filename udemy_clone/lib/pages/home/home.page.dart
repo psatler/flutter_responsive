@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
         print(
             "biggest: ${constraints.biggest}  --- smallest: ${constraints.smallest}");
         return Scaffold(
+          backgroundColor: Colors.black,
           appBar: constraints.maxWidth < mobileBreakpoint
               ? PreferredSize(
                   child: MobileAppBar(),
