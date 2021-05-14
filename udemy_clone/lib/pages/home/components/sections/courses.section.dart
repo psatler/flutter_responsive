@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_clone/breakpoints.dart';
 
+import '../course_item.dart';
+
 class CoursesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,7 @@ class CoursesSection extends StatelessWidget {
               NeverScrollableScrollPhysics(), // the GridView is already inside a ListView, so we lock its Scroll behavior so that we can scroll the list view
           itemCount: 20,
           itemBuilder: (context, index) {
-            return Container(
-              color: Colors.red,
-            );
+            return CourseItem();
           },
         );
       },
