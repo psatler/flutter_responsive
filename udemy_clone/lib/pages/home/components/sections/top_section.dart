@@ -11,7 +11,8 @@ class TopSection extends StatelessWidget {
 
         print('topSection maxWidth: $maxWidth');
 
-        if (maxWidth >= 1200) {
+        // web
+        if (maxWidth >= tabletBreakpoint) {
           return AspectRatio(
             aspectRatio: 3.2,
             child: Stack(
@@ -59,6 +60,7 @@ class TopSection extends StatelessWidget {
           );
         }
 
+        // mobile
         return Column(
           children: [
             AspectRatio(

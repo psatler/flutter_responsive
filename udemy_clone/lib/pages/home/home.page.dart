@@ -5,6 +5,7 @@ import 'components/app_bar/web_app_bar.dart';
 import 'components/app_bar/mobile_app_bar.dart';
 import 'components/sections/advantages_section.dart';
 import 'components/sections/top_section.dart';
+import 'components/sections/courses.section.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -41,6 +42,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   TopSection(),
                   AdvantagesSection(),
+                  CoursesSection(),
                 ],
               ),
             ),
