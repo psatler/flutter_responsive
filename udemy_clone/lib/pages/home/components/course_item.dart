@@ -18,6 +18,7 @@ class CourseItem extends StatelessWidget {
               print('Course Item $constraints');
               return AutoSizeText(
                 'Creating apps for Android and iOS with Flutter - Build several apps',
+                minFontSize: 3,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
