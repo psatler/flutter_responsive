@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class CourseItem extends StatelessWidget {
@@ -11,12 +12,19 @@ class CourseItem extends StatelessWidget {
           fit: BoxFit.fitWidth,
         ),
         const SizedBox(height: 4),
-        Text(
-          'Creating apps for Android and iOS with Flutter - Build several apps',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-            color: Colors.white,
+        Flexible(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              print('Course Item $constraints');
+              return AutoSizeText(
+                'Creating apps for Android and iOS with Flutter - Build several apps',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                  color: Colors.white,
+                ),
+              );
+            },
           ),
         ),
         Text(
