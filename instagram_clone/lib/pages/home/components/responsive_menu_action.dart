@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_value.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 
+import '../../../constants.dart';
+
 class ResponsiveMenuAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,7 @@ class ResponsiveMenuAction extends StatelessWidget {
         const SizedBox(width: 16),
         CircleAvatar(
           radius: 16,
-          backgroundImage: NetworkImage(
-              'https://images.unsplash.com/photo-1605677677382-8baa24578e08?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'),
+          backgroundImage: NetworkImage(avatarImage),
         )
       ],
     );
