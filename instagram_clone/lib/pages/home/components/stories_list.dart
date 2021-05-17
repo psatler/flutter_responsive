@@ -10,7 +10,7 @@ class StoriesList extends StatelessWidget {
 
     return Container(
       height: 110,
-      margin: EdgeInsets.symmetric(vertical: isMobile ? 15 : 35),
+      margin: EdgeInsets.only(top: isMobile ? 15 : 35),
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         separatorBuilder: (context, index) => const SizedBox(width: 16),

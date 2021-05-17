@@ -8,7 +8,7 @@ class PostWidget extends StatelessWidget {
     final isDesktop = ResponsiveWrapper.of(context).isDesktop;
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: isDesktop ? 35 : 0),
+      padding: EdgeInsets.symmetric(vertical: isDesktop ? 16 : 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -40,7 +40,10 @@ class PostWidget extends StatelessWidget {
               ],
             ),
           ),
-          Image.network(avatarImage),
+          Image.network(
+            avatarImage,
+            fit: BoxFit.contain,
+          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
             child: Row(
@@ -109,7 +112,7 @@ class PostWidget extends StatelessWidget {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         isCollapsed: true,
-                        hintText: 'Adicione um comentário...',
+                        hintText: 'Add a comment...',
                         hintStyle: TextStyle(fontSize: 13, color: Colors.white),
                       ),
                     ),
