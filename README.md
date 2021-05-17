@@ -12,4 +12,4 @@ select the screen sizes.
 ### Aknowledments
 
 - [Web Renderers](https://flutter.dev/docs/development/tools/web-renderers)
-- To deploy on Vercel, it was removed from the `.gitignore` the build folder
+- To deploy on Vercel, the build folder was removed from the `.gitignore`
